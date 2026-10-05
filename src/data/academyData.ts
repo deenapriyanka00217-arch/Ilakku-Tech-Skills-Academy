@@ -1,3 +1,22 @@
+import heroClassroomImg from '../assets/images/hero_academy_classroom_1791203505855.jpg';
+import beauticianImg from '../assets/images/beautician_bridal_styling_1791203519333.jpg';
+import tailoringImg from '../assets/images/tailoring_garment_workshop_1791203533118.jpg';
+import embroideryImg from '../assets/images/hand_embroidery_aari_art_1791203546877.jpg';
+import placementImg from '../assets/images/placement_drive_interviews_1791203563079.jpg';
+
+export const ACADEMY_IMAGES = {
+  heroClassroom: heroClassroomImg,
+  beautician: beauticianImg,
+  tailoring: tailoringImg,
+  embroidery: embroideryImg,
+  placement: placementImg,
+  heroClassroomStatic: '/images/hero_academy_classroom.jpg',
+  beauticianStatic: '/images/beautician_bridal_styling.jpg',
+  tailoringStatic: '/images/tailoring_garment_workshop.jpg',
+  embroideryStatic: '/images/hand_embroidery_aari_art.jpg',
+  placementStatic: '/images/placement_drive_interviews.jpg',
+};
+
 export interface CourseItem {
   id: string;
   title: string;
@@ -442,7 +461,7 @@ export const GALLERY_ITEMS: GalleryPhoto[] = [
     id: 'gal-hero-classroom',
     title: 'High-Tech IT Lab & Computer Classrooms',
     category: 'classroom',
-    image: '/src/assets/images/hero_academy_classroom_1791203505855.jpg',
+    image: heroClassroomImg,
     caption: 'Modern air-conditioned computer laboratory at Aminjikarai campus with desktop systems, high-speed connectivity, and interactive projection.',
     tag: 'Infrastructure',
     details: 'Full infrastructure equipped with high-performance desktop systems, individual student workstations, projector screens, and mentor support for hands-on software development and data science training.',
@@ -452,7 +471,7 @@ export const GALLERY_ITEMS: GalleryPhoto[] = [
     id: 'gal-beautician-bridal',
     title: 'Bridal Styling & Cosmetology Studio',
     category: 'beautician',
-    image: '/src/assets/images/beautician_bridal_styling_1791203519333.jpg',
+    image: beauticianImg,
     caption: 'Traditional South Indian bridal hair styling adorned with fresh fragrant jasmine flowers, gold jadai temple jewelry, and professional cosmetics kits.',
     tag: 'Women Empowerment',
     details: 'Equipped with salon-grade mirrors, professional makeup palettes (Forever52, Kryolan), facial treatment beds, and live bridal styling workstations.',
@@ -462,7 +481,7 @@ export const GALLERY_ITEMS: GalleryPhoto[] = [
     id: 'gal-tailoring-workshop',
     title: 'Garment Construction & Tailoring Workshop',
     category: 'tailoring',
-    image: '/src/assets/images/tailoring_garment_workshop_1791203533118.jpg',
+    image: tailoringImg,
     caption: 'Industrial sewing machine workshop where women trainees master pattern making, precision stitching, sari blouse cutting, and boutique fashion.',
     tag: 'Vocational Skill',
     details: 'Features rows of motorized sewing machines, large pattern cutting tables, mannequin fittings, and orientation ceremonies lighting traditional lamps.',
@@ -472,7 +491,7 @@ export const GALLERY_ITEMS: GalleryPhoto[] = [
     id: 'gal-embroidery-aari',
     title: 'Intricate Hand Embroidery & Aari Needlework',
     category: 'embroidery',
-    image: '/src/assets/images/hand_embroidery_aari_art_1791203546877.jpg',
+    image: embroideryImg,
     caption: 'Artisan trainees mastering Aari needle craft, metallic zari threading, zardozi work, beads, and custom bridal blouse motifs on circular wooden hoops.',
     tag: 'Artisan Craft',
     details: 'Showcases traditional craft skills enabling home-based entrepreneurship. Trainees create high-value bridal embroidery, floral gowns, butterfly motifs, and ornate borders.',
@@ -482,7 +501,7 @@ export const GALLERY_ITEMS: GalleryPhoto[] = [
     id: 'gal-placement-recruitment',
     title: 'Corporate Placement Drive & HR Interviews',
     category: 'placement',
-    image: '/src/assets/images/placement_drive_interviews_1791203563079.jpg',
+    image: placementImg,
     caption: 'On-campus hiring interviews conducted by visiting recruitment partners including IT services, BFSI firms, and corporate HRs.',
     tag: '100% Placement Support',
     details: 'Regular campus recruitment drives with companies like Causeve Sense & Compute, CIEL, Star Skills, and retail/service firms offering immediate appointment letters.',

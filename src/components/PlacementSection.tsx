@@ -1,5 +1,6 @@
 import React from 'react';
 import { Briefcase, Building, CheckCircle2, TrendingUp, Users, Award, ExternalLink } from 'lucide-react';
+import { ACADEMY_IMAGES } from '../data/academyData';
 
 interface PlacementSectionProps {
   onOpenEnrollModal: () => void;
@@ -16,7 +17,8 @@ export const PlacementSection: React.FC<PlacementSectionProps> = ({ onOpenEnroll
           <div className="lg:col-span-6 space-y-4">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
               <img
-                src="/src/assets/images/placement_drive_interviews_1791203563079.jpg"
+                src={ACADEMY_IMAGES.placement}
+                onError={(e) => { e.currentTarget.src = ACADEMY_IMAGES.placementStatic; }}
                 alt="Corporate campus placement drive at Ilakku Tech Skills Academy"
                 referrerPolicy="no-referrer"
                 className="w-full h-80 object-cover object-center"

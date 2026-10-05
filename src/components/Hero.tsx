@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Building, ShieldCheck, Sparkles, MapPin } from 'lucide-react';
-import { ACADEMY_INFO } from '../data/academyData';
+import { ACADEMY_INFO, ACADEMY_IMAGES } from '../data/academyData';
 
 interface HeroProps {
   onOpenEnrollModal: () => void;
@@ -100,7 +100,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnrollModal }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden bg-slate-900 shadow-xl border border-slate-200/80 group">
               <img
-                src="/src/assets/images/hero_academy_classroom_1791203505855.jpg"
+                src={ACADEMY_IMAGES.heroClassroom}
+                onError={(e) => { e.currentTarget.src = ACADEMY_IMAGES.heroClassroomStatic; }}
                 alt="Ilakku Tech Skills Academy Modern Computer Classroom in Chennai"
                 referrerPolicy="no-referrer"
                 className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-102 transition-transform duration-500"

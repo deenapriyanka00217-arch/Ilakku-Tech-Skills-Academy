@@ -13,6 +13,14 @@ import {
 } from 'lucide-react';
 import { GALLERY_ITEMS, PDF_PHOTO_SERIES, GalleryPhoto } from '../data/academyData';
 
+const fallbackImageMap: Record<string, string> = {
+  'gal-hero-classroom': '/images/hero_academy_classroom.jpg',
+  'gal-beautician-bridal': '/images/beautician_bridal_styling.jpg',
+  'gal-tailoring-workshop': '/images/tailoring_garment_workshop.jpg',
+  'gal-embroidery-aari': '/images/hand_embroidery_aari_art.jpg',
+  'gal-placement-recruitment': '/images/placement_drive_interviews.jpg',
+};
+
 export const GallerySection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'classrooms' | 'beautician' | 'tailoring' | 'embroidery' | 'placement' | 'archive'>('all');
   const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null);
@@ -130,6 +138,12 @@ export const GallerySection: React.FC = () => {
                 <div className="relative aspect-4/3 overflow-hidden bg-slate-900 cursor-pointer" onClick={() => setSelectedPhoto(item)}>
                   <img
                     src={item.image}
+                    onError={(e) => {
+                      const fallback = fallbackImageMap[item.id] || '/images/hero_academy_classroom.jpg';
+                      if (e.currentTarget.src !== fallback) {
+                        e.currentTarget.src = fallback;
+                      }
+                    }}
                     alt={item.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -263,6 +277,12 @@ export const GallerySection: React.FC = () => {
               <div className="aspect-16/10 bg-slate-950 overflow-hidden">
                 <img
                   src={selectedPhoto.image}
+                  onError={(e) => {
+                    const fallback = fallbackImageMap[selectedPhoto.id] || '/images/hero_academy_classroom.jpg';
+                    if (e.currentTarget.src !== fallback) {
+                      e.currentTarget.src = fallback;
+                    }
+                  }}
                   alt={selectedPhoto.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-contain"
